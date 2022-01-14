@@ -4,9 +4,9 @@ Repositório da turma de Java 2 (07/12/21)
 
 ## Aula 2
 
-* Criamos uma conexão com o SGBD da Oracle
+* Abrimos uma conexão com o SGBD da Oracle
 
-<p>Utilizando o DriverManager para criar uma conexão:</p>
+* Utilizando o DriverManager e a classe Connection para abrir uma conexão:
 
 <pre><code>
         String URL = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -22,7 +22,7 @@ Repositório da turma de Java 2 (07/12/21)
 
 * Inserimos os primeiros registros
 
-<p>Utilizando a classe Statement para inserir 1 registro fixo:</p>
+- Utilizamos a classe Statement para inserir 1 registro fixo:
 
 <pre><code>
        public void inserir(Connection conexao) throws SQLException {
