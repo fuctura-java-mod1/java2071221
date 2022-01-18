@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import fuctura.model.Cliente;
 import fuctura.repository.ClienteRepositorio;
 
 public class Aplicacao {
@@ -24,13 +25,15 @@ public class Aplicacao {
 		
 		//pedir pra o usuário digitar os dados
 		
-		String nome = "";
-		String cpf = "";
-		String email = "";
-		int idade = 0;
+		String nome = "Roberto";
+		String cpf = "123";
+		String email = "r@gmail.com";
+		int idade = 10;
+		
+		Cliente cliente = new Cliente(nome, cpf, idade, email);
 		
 		//como enviar os dados digitados para dentro do método inserir?
-		clienteRepo.inserir(conexao);
+		clienteRepo.inserirComPreparatedStatement(conexao, cliente);
 		
 		System.out.println("Registro inserido com sucesso!");
 		
