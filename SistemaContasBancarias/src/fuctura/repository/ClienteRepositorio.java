@@ -40,6 +40,7 @@ public class ClienteRepositorio {
 	// public void alterar();
 	// public void excluir();
 	// public List listarTodos();
+	//https://github.com/fuctura-java-mod1/java2071221
 	public ArrayList<Cliente> listarTodos(Connection conexao) throws SQLException{
 		
 		ArrayList<Cliente> clientesDaBase = new ArrayList<Cliente>();
@@ -51,7 +52,16 @@ public class ClienteRepositorio {
 		ResultSet resultadoDaConsulta =  stm.executeQuery(comando);
 		
 		while(  resultadoDaConsulta.next()  ) {
-			System.out.println("A");
+			
+			String nome = resultadoDaConsulta.getString(1);
+			String cpf = resultadoDaConsulta.getString(4);
+			String email = resultadoDaConsulta.getString(3);
+			int idade = resultadoDaConsulta.getInt(2);
+			
+			Cliente cliente = new Cliente(nome, cpf, idade, email);
+			
+			clientesDaBase.add(cliente);
+		
 		}
 		
 		return clientesDaBase;
