@@ -38,7 +38,9 @@ public class Aplicacao {
 		
 		System.out.println("Registro inserido com sucesso!");
 		
-		ArrayList<Cliente> resultado = repositorio.listarTodos(conexao);
+		//usuario deve digitar a idade que ele deseja filtrar
+		
+		ArrayList<Cliente> resultado = repositorio.listarTodosPorIdade(conexao);
 		
 		exibirUsuarios(resultado);
 		
@@ -47,7 +49,6 @@ public class Aplicacao {
 	public static void exibirUsuarios(ArrayList<Cliente> usuarios) {
 		for(int i = 0; i < usuarios.size(); i++) {
 			Cliente c = usuarios.get(i);
-			
 			System.out.println("Nome: " + c.getNome() );
 			System.out.println("Idade: " + c.getIdade());
 		}
